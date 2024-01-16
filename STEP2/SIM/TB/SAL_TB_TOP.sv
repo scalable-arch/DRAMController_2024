@@ -148,13 +148,13 @@ module SAL_TB_TOP;
 
 
     logic   [0:255]             data;
-    logic   [0:255]             rdata;
+    logic   [0:255]             wdata;
     initial begin
         init();
 
-        rdata = 256'h1111_1111_2222_2222_3333_3333_4444_4444_5555_5555_6666_6666_7777_7777_8888_8888;
-        write32B('h0008,    rdata); // bank 0, row 0, col 1,2,3,0
-        write32B('h2000,    rdata); // bank 1, row 0, col 0,1,2,3
+        wdata = 256'h1111_1111_2222_2222_3333_3333_4444_4444_5555_5555_6666_6666_7777_7777_8888_8888;
+        write32B('h0008,    wdata); // bank 0, row 0, col 1,2,3,0
+        write32B('h2000,    wdata); // bank 1, row 0, col 0,1,2,3
         write32B('h4010,    {8{32'h99999999}}); // bank 2, row 0, col 0~3
         write32B('h6018,    {8{32'h88888888}}); // bank 3, row 0, col 0~3
         write32B('h8020,    {8{32'h77777777}}); // bank 0, row 1, col 4~7
